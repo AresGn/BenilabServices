@@ -89,9 +89,9 @@ const QuotationForm = () => {
     }
     
     if (!formValues.email.trim()) {
-      newErrors.email = 'L\'email est requis';
+      newErrors.email = 'L&apos;email est requis';
     } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
-      newErrors.email = 'Format d\'email invalide';
+      newErrors.email = 'Format d&apos;email invalide';
     }
     
     if (!formValues.projectType) {
@@ -317,7 +317,7 @@ const QuotationForm = () => {
             onChange={handleCheckboxChange}
           >
             <Text fontSize="sm">
-              J'accepte les{' '}
+              J&apos;accepte les{' '}
               <Link color="primary.500" href="/conditions-generales">
                 conditions générales
               </Link>
