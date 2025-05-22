@@ -74,7 +74,7 @@ export const Footer = () => {
               />
             </Box>
             <Text fontSize={'sm'}>
-              © 2024 Benilab Services. Tous droits réservés
+              © 2025 Benilab Services. Tous droits réservés
             </Text>
             <Stack direction={'row'} spacing={6}>
               <SocialButton label={'Twitter'} href={'#'}>
