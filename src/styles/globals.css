@@ -1,0 +1,128 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Lato:wght@400;600&display=swap');
+
+:root {
+  /* Couleurs primaires */
+  --primary-blue: #005B99;
+  --secondary-blue: #4DA8DA;
+  
+  /* Couleurs secondaires */
+  --gray-light: #F5F6FA;
+  --gray-dark: #2D3748;
+  --white: #FFFFFF;
+  
+  /* Couleurs d'accent */
+  --accent-yellow: #FFC107;
+  --accent-green: #28A745;
+}
+
+@layer base {
+  html {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--gray-dark);
+    background-color: var(--white);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--primary-blue);
+  }
+
+  h1 {
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.875rem; /* 30px */
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.4;
+  }
+
+  h4 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+}
+
+@layer components {
+  /* Boutons */
+  .btn {
+    @apply px-6 py-2 rounded-lg font-poppins font-medium transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-primary-blue text-white hover:bg-secondary-blue;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-blue text-white hover:opacity-90;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white;
+  }
+
+  /* Cartes */
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Sections */
+  .section {
+    @apply py-16 px-4;
+  }
+
+  .section-light {
+    @apply bg-gray-light;
+  }
+
+  .section-dark {
+    @apply bg-primary-blue text-white;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply font-poppins font-medium text-primary-blue hover:text-secondary-blue transition-colors duration-300;
+  }
+
+  /* Badges */
+  .badge {
+    @apply px-3 py-1 rounded-full text-sm font-poppins font-medium;
+  }
+
+  .badge-yellow {
+    @apply bg-accent-yellow text-gray-dark;
+  }
+
+  .badge-green {
+    @apply bg-accent-green text-white;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .transition-standard {
+    @apply transition-all duration-300 ease-in-out;
+  }
+} 

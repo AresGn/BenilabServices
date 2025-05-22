@@ -1,1 +1,174 @@
 /* utilities.css placeholder */ 
+
+/* Utilitaires de mise en page */
+
+/* Conteneurs */
+.container-fluid {
+  @apply w-full px-4;
+}
+
+.container-narrow {
+  @apply max-w-[768px] mx-auto px-4;
+}
+
+.container-wide {
+  @apply max-w-container mx-auto px-4;
+}
+
+/* Espacements */
+.spacing-section {
+  @apply py-section;
+}
+
+.spacing-content {
+  @apply space-y-8;
+}
+
+.spacing-items {
+  @apply space-y-4;
+}
+
+/* Grilles */
+.grid-services {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.grid-projects {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.grid-team {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+}
+
+/* Flexbox */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex items-center justify-between;
+}
+
+.flex-start {
+  @apply flex items-start justify-start;
+}
+
+/* Typographie */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-blue to-secondary-blue;
+}
+
+.text-body {
+  @apply font-lato text-body text-gray-dark leading-relaxed;
+}
+
+.text-emphasis {
+  @apply font-poppins font-medium;
+}
+
+/* Bordures et ombres */
+.border-light {
+  @apply border border-gray-light;
+}
+
+.border-accent {
+  @apply border-2 border-primary-blue;
+}
+
+.shadow-hover {
+  @apply transition-shadow duration-300 hover:shadow-lg;
+}
+
+/* Effets d'interaction */
+.hover-opacity {
+  @apply transition-opacity duration-300 hover:opacity-80;
+}
+
+.hover-brightness {
+  @apply transition-all duration-300 hover:brightness-110;
+}
+
+/* Accessibilité */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2;
+}
+
+/* Images */
+.img-cover {
+  @apply object-cover w-full h-full;
+}
+
+.img-contain {
+  @apply object-contain w-full h-full;
+}
+
+/* Animations */
+.animate-fade-in {
+  @apply opacity-0 animate-[fadeIn_0.5s_ease-in-out_forwards];
+}
+
+.animate-slide-up {
+  @apply translate-y-4 opacity-0 animate-[slideUp_0.5s_ease-out_forwards];
+}
+
+/* Responsive */
+.hide-mobile {
+  @apply hidden md:block;
+}
+
+.show-mobile {
+  @apply block md:hidden;
+}
+
+/* États */
+.is-active {
+  @apply text-secondary-blue font-medium;
+}
+
+.is-disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Arrière-plans */
+.bg-gradient {
+  @apply bg-gradient-to-r from-primary-blue to-secondary-blue;
+}
+
+.bg-overlay {
+  @apply bg-gray-dark bg-opacity-50;
+}
+
+/* Utilitaires spécifiques au projet */
+.logo-space {
+  @apply mr-2 h-8 w-auto;
+}
+
+.nav-spacing {
+  @apply space-x-6;
+}
+
+.section-spacing {
+  @apply py-16 md:py-24;
+}
+
+/* Keyframes pour les animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} 

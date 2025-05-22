@@ -1,1 +1,134 @@
 /* components.css placeholder */ 
+
+/* Composants de base */
+
+/* Boutons */
+.btn-base {
+  @apply font-poppins font-medium px-6 py-2 rounded-lg transition-all duration-300;
+}
+
+.btn-primary {
+  @apply btn-base bg-primary-blue text-white hover:bg-secondary-blue;
+}
+
+.btn-secondary {
+  @apply btn-base bg-secondary-blue text-white hover:opacity-90;
+}
+
+.btn-outline {
+  @apply btn-base border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white;
+}
+
+/* Cartes */
+.card-base {
+  @apply bg-white rounded-lg p-6 shadow-card;
+}
+
+.card-hover {
+  @apply card-base hover:shadow-lg transition-shadow duration-300;
+}
+
+/* Sections */
+.section-container {
+  @apply max-w-container mx-auto px-4;
+}
+
+.section-padding {
+  @apply py-section;
+}
+
+.section-light {
+  @apply bg-gray-light;
+}
+
+.section-dark {
+  @apply bg-primary-blue text-white;
+}
+
+/* Navigation */
+.nav-container {
+  @apply max-w-container mx-auto px-4 flex items-center justify-between;
+}
+
+.nav-link {
+  @apply font-poppins font-medium text-primary-blue hover:text-secondary-blue transition-colors duration-300;
+}
+
+.nav-link-light {
+  @apply font-poppins font-medium text-white hover:text-gray-light transition-colors duration-300;
+}
+
+/* Badges */
+.badge-base {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-poppins font-medium;
+}
+
+.badge-yellow {
+  @apply badge-base bg-accent-yellow text-gray-dark;
+}
+
+.badge-green {
+  @apply badge-base bg-accent-green text-white;
+}
+
+/* Titres */
+.section-title {
+  @apply font-poppins font-bold text-title-large text-primary-blue mb-6;
+}
+
+.section-subtitle {
+  @apply font-poppins font-medium text-subtitle text-gray-dark mb-4;
+}
+
+/* Formulaires */
+.form-label {
+  @apply block font-poppins font-medium text-gray-dark mb-2;
+}
+
+.form-input {
+  @apply w-full px-4 py-2 border border-gray-light rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent;
+}
+
+.form-textarea {
+  @apply form-input min-h-[120px];
+}
+
+/* Icônes */
+.icon {
+  @apply w-6 h-6 stroke-2;
+}
+
+.icon-primary {
+  @apply icon text-primary-blue;
+}
+
+.icon-secondary {
+  @apply icon text-secondary-blue;
+}
+
+/* Effets d'animation */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-1;
+}
+
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+/* Footer */
+.footer-link {
+  @apply text-white hover:text-gray-light transition-colors duration-300;
+}
+
+.footer-section {
+  @apply bg-primary-blue text-white py-12;
+}
+
+/* Logo */
+.logo-container {
+  @apply flex items-center space-x-2;
+}
+
+.logo-text {
+  @apply font-poppins font-bold text-primary-blue;
+} 
