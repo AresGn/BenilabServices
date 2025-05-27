@@ -105,13 +105,11 @@ export const HeroSection = () => {
             <Box
               position={'relative'}
               height={'300px'}
-              rounded={'2xl'}
               width={'full'}
-              overflow={'hidden'}
             >
               <Image
                 alt={'Hero Image'}
-                fit={'cover'}
+                fit={'contain'}
                 align={'center'}
                 w={'100%'}
                 h={'100%'}

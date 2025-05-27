@@ -31,7 +31,7 @@ const ServiceCard = ({ title, description, icon, ...rest }: ServiceCardProps) =>
             color="primary.500"
           />
         )}
-        <Heading size="md" fontWeight="bold">
+        <Heading size="md" fontWeight="bold" color="primary.500">
           {title}
         </Heading>
         <Text color="gray.600">
