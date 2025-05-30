@@ -12,9 +12,9 @@ import {
   Link,
   StackProps,
   IconButtonProps,
+  Button
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { Button } from '../ui/Button';
 
 const Links = [
   { name: 'Services', href: '#services' },
@@ -89,6 +89,7 @@ export const Navbar = () => {
 
           <Flex alignItems={'center'}>
             <Button
+              colorScheme="primary"
               variant="outline"
               size="md"
               mr={4}
@@ -97,7 +98,7 @@ export const Navbar = () => {
               Demander un devis
             </Button>
             <Button
-              variant="primary"
+              colorScheme="primary"
               size="md"
               display={{ base: 'none', md: 'inline-flex' }}
             >

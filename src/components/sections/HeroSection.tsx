@@ -7,8 +7,8 @@ import {
   Text,
   Image,
   StackProps,
+  Button
 } from '@chakra-ui/react';
-import { Button } from '../ui/Button';
 
 export const HeroSection = () => {
   const stackProps: StackProps = {
