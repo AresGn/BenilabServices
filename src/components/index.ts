@@ -6,4 +6,3 @@ export { Footer } from './layout/Footer';
 export { HeroSection } from './sections/HeroSection';
 
 // UI components
-export { Button } from './ui/Button'; 
