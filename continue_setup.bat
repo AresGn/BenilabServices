@@ -62,7 +62,7 @@ type nul > src\app\favicon.ico
 
 :: Création des composants UI avec leurs fichiers
 type nul > src\components\ui\index.ts
-echo export { default as Button } from './Button';> src\components\ui\index.ts
+echo export { default as Button } from '';> src\components\ui\index.ts
 echo export { default as Card } from './Card';>> src\components\ui\index.ts
 echo export { default as Badge } from './Badge';>> src\components\ui\index.ts
 echo export { default as Modal } from './Modal';>> src\components\ui\index.ts
