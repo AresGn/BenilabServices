@@ -1,4 +1,5 @@
-import { Box, Container, VStack } from '@chakra-ui/react';
+import { Box, Container, VStack, Button, HStack } from '@chakra-ui/react';
+import { FaArrowRight } from 'react-icons/fa';
 import SectionTitle from '../common/SectionTitle';
 import ProjectCard from '../common/ProjectCard';
 import { projects } from '../../data/projects';
@@ -22,7 +23,7 @@ export const ProjectsSection = () => {
             gap={{ base: 6, md: 8 }}
             w="100%"
           >
-            {projects.map((project) => (
+            {projects.slice(0, 4).map((project) => (
               <ProjectCard
                 key={project.id}
                 title={project.title}
@@ -33,6 +34,33 @@ export const ProjectsSection = () => {
                 status={project.status}
               />
             ))}
+          </Box>
+
+          {/* Bouton Explorer plus */}
+          <Box textAlign="center" mt={8}>
+            <Button
+              variant="outline"
+              size="lg"
+              px={8}
+              py={6}
+              fontSize="md"
+              fontWeight="medium"
+              borderColor="primary.500"
+              color="primary.500"
+              _hover={{
+                bg: "primary.500",
+                color: "white",
+                transform: "translateY(-2px)",
+                boxShadow: "0 8px 25px rgba(0, 91, 153, 0.3)"
+              }}
+              _active={{
+                transform: "translateY(0)"
+              }}
+              transition="all 0.3s ease"
+              rightIcon={<FaArrowRight />}
+            >
+              Explorer tous nos projets
+            </Button>
           </Box>
         </VStack>
       </Container>

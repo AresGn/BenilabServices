@@ -76,20 +76,45 @@ export const HeroSection = () => {
               direction={{ base: 'column', sm: 'row' }}
             >
               <Button
-                variant="primary"
+                bg="#3894d0"
+                color="white"
                 size="lg"
                 px={8}
                 fontSize={'md'}
                 rounded={'full'}
+                _hover={{
+                  bg: "#2980b9",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 4px 12px rgba(56, 148, 208, 0.3)"
+                }}
+                _active={{
+                  bg: "#1f6a9a",
+                  transform: "translateY(0)"
+                }}
+                transition="all 0.3s ease"
               >
                 Démarrer un projet
               </Button>
               <Button
-                variant="outline"
+                borderColor="#3894d0"
+                color="#3894d0"
+                borderWidth="2px"
                 size="lg"
                 px={8}
                 fontSize={'md'}
                 rounded={'full'}
+                variant="outline"
+                _hover={{
+                  bg: "#3894d0",
+                  color: "white",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 4px 12px rgba(56, 148, 208, 0.3)"
+                }}
+                _active={{
+                  bg: "#2980b9",
+                  transform: "translateY(0)"
+                }}
+                transition="all 0.3s ease"
               >
                 Découvrir nos services
               </Button>
