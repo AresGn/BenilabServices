@@ -25,7 +25,7 @@ type nul > public\images\projects\agriboost-preview.jpg
 type nul > public\images\projects\pre2excel-preview.jpg
 type nul > public\images\projects\smarttutor-preview.jpg
 type nul > public\images\projects\school-sms-preview.jpg
-type nul > public\images\team\placeholder-team.jpg
+type nul > public\images\team\placeholder-team.svg
 type nul > public\images\hero\hero-bg.jpg
 type nul > public\images\hero\hero-illustration.svg
 type nul > public\icons\favicon.ico

@@ -21,7 +21,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Direction',
     bio: 'Passionné de technologie et d\'innovation, Benjamin dirige l\'équipe technique avec plus de 8 ans d\'expérience dans le développement web et mobile.',
     skills: ['Leadership', 'Stratégie Digitale', 'Développement Full-Stack', 'Gestion de Projet'],
-    image: '/images/team/placeholder-team.jpg'
+    image: '/images/team/placeholder-team.svg'
   },
   {
     id: 'member-2',
@@ -30,7 +30,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Développement et Tech',
     bio: 'Experte en développement web moderne, Sarah maîtrise les dernières technologies pour créer des solutions performantes et évolutives.',
     skills: ['React', 'Next.js', 'Laravel', 'Node.js', 'MongoDB'],
-    image: '/images/team/placeholder-team.jpg'
+    image: '/images/team/placeholder-team.svg'
   },
   {
     id: 'member-3',
@@ -39,7 +39,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Design et Multimédia',
     bio: 'Créatif passionné, David conçoit des identités visuelles fortes et des interfaces utilisateur intuitives qui marquent les esprits.',
     skills: ['UI/UX Design', 'Adobe Creative Suite', 'Figma', 'Branding', 'Illustration'],
-    image: '/images/team/placeholder-team.jpg'
+    image: '/images/team/placeholder-team.svg'
   },
   {
     id: 'member-4',
@@ -48,7 +48,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Marketing Digital',
     bio: 'Stratège marketing expérimentée, Aminata développe des campagnes digitales qui génèrent des résultats mesurables pour nos clients.',
     skills: ['Google Ads', 'Facebook Ads', 'SEO/SEA', 'Analytics', 'Automation Marketing'],
-    image: '/images/team/placeholder-team.jpg'
+    image: '/images/team/placeholder-team.svg'
   },
   {
     id: 'member-5',
@@ -57,7 +57,7 @@ export const teamMembers: TeamMember[] = [
     department: 'Design et Multimédia',
     bio: 'Spécialiste du contenu vidéo, Kofi crée des vidéos engageantes et des animations qui captivent l\'audience sur toutes les plateformes.',
     skills: ['Adobe Premiere Pro', 'After Effects', 'Motion Graphics', 'TikTok Content', 'YouTube'],
-    image: '/images/team/placeholder-team.jpg'
+    image: '/images/team/placeholder-team.svg'
   },
   {
     id: 'member-6',
@@ -66,6 +66,6 @@ export const teamMembers: TeamMember[] = [
     department: 'Marketing Digital',
     bio: 'Experte en animation de communautés, Fatou gère les réseaux sociaux avec créativité et engagement pour développer la présence digitale.',
     skills: ['Community Management', 'Content Creation', 'Social Media Strategy', 'Copywriting'],
-    image: '/images/team/placeholder-team.jpg'
+    image: '/images/team/placeholder-team.svg'
   }
 ];

@@ -1,4 +1,4 @@
-import { Box, Container, VStack, Button, HStack } from '@chakra-ui/react';
+import { Box, Container, VStack, Button } from '@chakra-ui/react';
 import { FaArrowRight } from 'react-icons/fa';
 import SectionTitle from '../common/SectionTitle';
 import ProjectCard from '../common/ProjectCard';
@@ -58,6 +58,8 @@ export const ProjectsSection = () => {
               }}
               transition="all 0.3s ease"
               rightIcon={<FaArrowRight />}
+              as="a"
+              href="/projets"
             >
               Explorer tous nos projets
             </Button>
