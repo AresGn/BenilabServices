@@ -34,6 +34,18 @@ const theme = extendTheme({
       yellow: '#FFC107',
       green: '#28A745',
     },
+    button: {
+      50: '#e8f4fd',
+      100: '#c4e1f9',
+      200: '#9dcef4',
+      300: '#75bbef',
+      400: '#3894d0', // Couleur bouton personnalisée
+      500: '#2980b9',
+      600: '#1f6a9a',
+      700: '#15547b',
+      800: '#0b3e5c',
+      900: '#01283d',
+    },
   },
   fonts: {
     heading: 'Poppins, sans-serif',
@@ -44,6 +56,37 @@ const theme = extendTheme({
       baseStyle: {
         fontWeight: 'medium',
         borderRadius: 'lg',
+        transition: 'all 0.3s ease',
+      },
+      variants: {
+        primary: {
+          bg: 'button.400',
+          color: 'white',
+          _hover: {
+            bg: 'button.500',
+            transform: 'translateY(-2px)',
+            boxShadow: '0 4px 12px rgba(56, 148, 208, 0.3)',
+          },
+          _active: {
+            bg: 'button.600',
+            transform: 'translateY(0)',
+          },
+        },
+        outline: {
+          borderColor: 'button.400',
+          color: 'button.400',
+          borderWidth: '2px',
+          _hover: {
+            bg: 'button.400',
+            color: 'white',
+            transform: 'translateY(-2px)',
+            boxShadow: '0 4px 12px rgba(56, 148, 208, 0.3)',
+          },
+          _active: {
+            bg: 'button.500',
+            transform: 'translateY(0)',
+          },
+        },
       },
     },
   },

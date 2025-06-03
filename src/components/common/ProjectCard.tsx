@@ -1,28 +1,57 @@
 'use client'
 
-import { Box, Image, Heading, Text, VStack, HStack, Tag, Link, BoxProps } from '@chakra-ui/react';
+import { Box, Image, Heading, Text, VStack, HStack, Tag, Badge, Link, BoxProps } from '@chakra-ui/react';
 
 interface ProjectCardProps extends BoxProps {
   title: string;
   description: string;
-  imageUrl: string;
-  tags?: string[];
+  image: string;
+  category: string;
+  technologies: string[];
+  status: 'completed' | 'in-progress' | 'planned';
   link?: string;
 }
 
-const ProjectCard = ({ 
-  title, 
-  description, 
-  imageUrl, 
-  tags = [], 
+const ProjectCard = ({
+  title,
+  description,
+  image,
+  category,
+  technologies,
+  status,
   link,
-  ...rest 
+  ...rest
 }: ProjectCardProps) => {
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'completed':
+        return 'green';
+      case 'in-progress':
+        return 'yellow';
+      case 'planned':
+        return 'blue';
+      default:
+        return 'gray';
+    }
+  };
+
+  const getStatusText = (status: string) => {
+    switch (status) {
+      case 'completed':
+        return 'Terminé';
+      case 'in-progress':
+        return 'En cours';
+      case 'planned':
+        return 'Planifié';
+      default:
+        return 'Statut inconnu';
+    }
+  };
   const content = (
     <>
-      <Box h="200px" overflow="hidden">
+      <Box h="200px" overflow="hidden" position="relative">
         <Image
-          src={imageUrl}
+          src={image}
           alt={title}
           objectFit="cover"
           w="100%"
@@ -32,25 +61,61 @@ const ProjectCard = ({
             transform: 'scale(1.05)',
           }}
         />
+        <Badge
+          position="absolute"
+          top={3}
+          right={3}
+          colorScheme={getStatusColor(status)}
+          variant="solid"
+          borderRadius="full"
+          px={3}
+          py={1}
+          fontSize="xs"
+          fontWeight="bold"
+        >
+          {getStatusText(status)}
+        </Badge>
       </Box>
-      
+
       <VStack p={5} align="flex-start" spacing={3}>
-        <Heading as="h3" size="md">
+        <Badge
+          alignSelf="flex-start"
+          colorScheme="blue"
+          variant="subtle"
+          borderRadius="md"
+          px={2}
+          py={1}
+          fontSize="xs"
+        >
+          {category}
+        </Badge>
+
+        <Heading as="h3" size="md" color="primary.500">
           {title}
         </Heading>
-        
+
         <Text color="gray.600" noOfLines={3}>
           {description}
         </Text>
-        
-        {tags.length > 0 && (
-          <HStack spacing={2} flexWrap="wrap">
-            {tags.map((tag) => (
-              <Tag key={tag} size="sm" colorScheme="primary" my={1}>
-                {tag}
-              </Tag>
-            ))}
-          </HStack>
+
+        {technologies.length > 0 && (
+          <VStack align="flex-start" spacing={2} w="100%">
+            <Text fontSize="xs" color="gray.500" fontWeight="medium">
+              Technologies :
+            </Text>
+            <HStack spacing={1} flexWrap="wrap">
+              {technologies.slice(0, 3).map((tech) => (
+                <Tag key={tech} size="sm" colorScheme="gray" variant="outline">
+                  {tech}
+                </Tag>
+              ))}
+              {technologies.length > 3 && (
+                <Tag size="sm" colorScheme="gray" variant="outline">
+                  +{technologies.length - 3}
+                </Tag>
+              )}
+            </HStack>
+          </VStack>
         )}
       </VStack>
     </>

@@ -1,12 +1,11 @@
 'use client'
 
-import { Box, Heading, Text, VStack, Icon, BoxProps } from '@chakra-ui/react';
-import { IconType } from 'react-icons';
+import { Box, Heading, Text, VStack, Image, BoxProps } from '@chakra-ui/react';
 
 interface ServiceCardProps extends BoxProps {
   title: string;
   description: string;
-  icon?: IconType;
+  icon?: string;
 }
 
 const ServiceCard = ({ title, description, icon, ...rest }: ServiceCardProps) => {
@@ -25,11 +24,24 @@ const ServiceCard = ({ title, description, icon, ...rest }: ServiceCardProps) =>
     >
       <VStack spacing={4} align="flex-start">
         {icon && (
-          <Icon
-            as={icon}
-            boxSize={10}
-            color="primary.500"
-          />
+          <Box
+            w={16}
+            h={16}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            bg="primary.50"
+            borderRadius="lg"
+            p={3}
+          >
+            <Image
+              src={icon}
+              alt={`${title} icon`}
+              w={10}
+              h={10}
+              objectFit="contain"
+            />
+          </Box>
         )}
         <Heading size="md" fontWeight="bold" color="primary.500">
           {title}
