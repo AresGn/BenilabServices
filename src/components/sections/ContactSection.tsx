@@ -29,7 +29,7 @@ const ContactInfo = ({ icon, text, link }: ContactInfoProps) => (
 
 export const ContactSection = () => {
   return (
-    <Box as="section" id="contact" py={16} bg="gray.50">
+    <Box as="section" id="contact" py={16} bg="primary.50">
       <Container maxW="container.xl">
         <Heading as="h2" size="xl" textAlign="center" mb={12} color="primary.700">
           Nous Contacter

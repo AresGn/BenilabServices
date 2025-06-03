@@ -3,22 +3,43 @@
 import {
   Box,
   Container,
-  Stack,
   SimpleGrid,
   Text,
   Link,
   VisuallyHidden,
   chakra,
-  useColorModeValue,
   Image,
+  Heading,
+  Flex,
+  Icon,
+  Divider,
+  VStack,
+  HStack,
 } from '@chakra-ui/react';
-import { FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa';
+import {
+  FaTwitter,
+  FaLinkedin,
+  FaFacebook,
+  FaInstagram,
+  FaYoutube,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt
+} from 'react-icons/fa';
+import NextLink from 'next/link';
 
 const ListHeader = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Text fontWeight={'500'} fontSize={'lg'} mb={2} color="primary.600">
+    <Heading
+      as="h4"
+      size="md"
+      fontWeight="600"
+      mb={4}
+      color="white"
+      fontFamily="Poppins"
+    >
       {children}
-    </Text>
+    </Heading>
   );
 };
 
@@ -33,20 +54,23 @@ const SocialButton = ({
 }) => {
   return (
     <chakra.button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-      rounded={'full'}
-      w={8}
-      h={8}
-      cursor={'pointer'}
-      as={'a'}
+      bg="whiteAlpha.200"
+      rounded="full"
+      w={10}
+      h={10}
+      cursor="pointer"
+      as="a"
       href={href}
-      display={'inline-flex'}
-      alignItems={'center'}
-      justifyContent={'center'}
-      transition={'background 0.3s ease'}
+      display="inline-flex"
+      alignItems="center"
+      justifyContent="center"
+      transition="all 0.3s ease"
       _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+        bg: 'secondary.400',
+        transform: 'translateY(-2px)',
+        boxShadow: '0 4px 12px rgba(77, 168, 218, 0.3)',
       }}
+      color="white"
     >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
@@ -54,62 +78,312 @@ const SocialButton = ({
   );
 };
 
+const ContactInfo = ({
+  icon,
+  text,
+  href
+}: {
+  icon: React.ElementType;
+  text: string;
+  href?: string;
+}) => (
+  <HStack spacing={3} align="center">
+    <Icon as={icon} color="secondary.400" w={4} h={4} />
+    {href ? (
+      <Link
+        href={href}
+        color="gray.300"
+        fontSize="sm"
+        _hover={{ color: "secondary.400" }}
+        isExternal
+      >
+        {text}
+      </Link>
+    ) : (
+      <Text color="gray.300" fontSize="sm">
+        {text}
+      </Text>
+    )}
+  </HStack>
+);
+
 export const Footer = () => {
   return (
     <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}
+      bg="primary.500"
+      color="white"
+      position="relative"
+      _before={{
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: '4px',
+        background: 'linear-gradient(90deg, #4DA8DA, #005B99)',
+      }}
     >
-      <Container as={Stack} maxW={'7xl'} py={10}>
+      <Container maxW="container.xl" py={12}>
         <SimpleGrid
-          templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr' }}
-          spacing={8}
+          templateColumns={{ base: '1fr', md: '2fr 1fr 1fr 1fr' }}
+          spacing={10}
         >
-          <Stack spacing={6}>
+          {/* Section Logo et Description */}
+          <VStack align="flex-start" spacing={6}>
             <Box>
               <Image
                 src="/images/logo/android-chrome-512x512.png"
                 alt="Benilab Services Logo"
-                h="40px"
+                h="50px"
+                filter="brightness(0) invert(1)"
               />
             </Box>
-            <Text fontSize={'sm'}>
-              © 2025 Benilab Services. Tous droits réservés
+            <Text
+              fontSize="md"
+              color="gray.300"
+              lineHeight="1.6"
+              maxW="300px"
+              fontFamily="Lato"
+            >
+              Votre partenaire de confiance pour une transformation digitale réussie.
+              Nous combinons expertise locale et standards internationaux.
             </Text>
-            <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Twitter'} href={'#'}>
-                <FaTwitter />
-              </SocialButton>
-              <SocialButton label={'LinkedIn'} href={'#'}>
-                <FaLinkedin />
-              </SocialButton>
-              <SocialButton label={'Facebook'} href={'#'}>
+
+            {/* Informations de contact */}
+            <VStack align="flex-start" spacing={3}>
+              <ContactInfo
+                icon={FaEnvelope}
+                text="contact@benilabservices.com"
+                href="mailto:contact@benilabservices.com"
+              />
+              <ContactInfo
+                icon={FaPhone}
+                text="+229 XX XX XX XX"
+                href="tel:+229XXXXXXXX"
+              />
+              <ContactInfo
+                icon={FaMapMarkerAlt}
+                text="Cotonou, Bénin"
+              />
+            </VStack>
+
+            {/* Réseaux sociaux */}
+            <HStack spacing={4}>
+              <SocialButton label="Facebook" href="https://facebook.com/benilabservices">
                 <FaFacebook />
               </SocialButton>
-            </Stack>
-          </Stack>
-          <Stack align={'flex-start'}>
+              <SocialButton label="LinkedIn" href="https://linkedin.com/company/benilabservices">
+                <FaLinkedin />
+              </SocialButton>
+              <SocialButton label="Instagram" href="https://instagram.com/benilabservices">
+                <FaInstagram />
+              </SocialButton>
+              <SocialButton label="YouTube" href="https://youtube.com/@benilabservices">
+                <FaYoutube />
+              </SocialButton>
+              <SocialButton label="Twitter" href="https://twitter.com/benilabservices">
+                <FaTwitter />
+              </SocialButton>
+            </HStack>
+          </VStack>
+
+          {/* Section Services */}
+          <VStack align="flex-start" spacing={4}>
             <ListHeader>Services</ListHeader>
-            <Link href={'#'}>Développement Web</Link>
-            <Link href={'#'}>Marketing Digital</Link>
-            <Link href={'#'}>Design UX/UI</Link>
-            <Link href={'#'}>Conseil Digital</Link>
-          </Stack>
-          <Stack align={'flex-start'}>
+            <VStack align="flex-start" spacing={3}>
+              <NextLink href="/#services" passHref>
+                <Link
+                  color="gray.300"
+                  fontSize="sm"
+                  _hover={{ color: "secondary.400" }}
+                  fontFamily="Lato"
+                >
+                  Développement Web
+                </Link>
+              </NextLink>
+              <NextLink href="/#services" passHref>
+                <Link
+                  color="gray.300"
+                  fontSize="sm"
+                  _hover={{ color: "secondary.400" }}
+                  fontFamily="Lato"
+                >
+                  Marketing Digital
+                </Link>
+              </NextLink>
+              <NextLink href="/#services" passHref>
+                <Link
+                  color="gray.300"
+                  fontSize="sm"
+                  _hover={{ color: "secondary.400" }}
+                  fontFamily="Lato"
+                >
+                  Design UX/UI
+                </Link>
+              </NextLink>
+              <NextLink href="/#services" passHref>
+                <Link
+                  color="gray.300"
+                  fontSize="sm"
+                  _hover={{ color: "secondary.400" }}
+                  fontFamily="Lato"
+                >
+                  Conseil Digital
+                </Link>
+              </NextLink>
+              <NextLink href="/#services" passHref>
+                <Link
+                  color="gray.300"
+                  fontSize="sm"
+                  _hover={{ color: "secondary.400" }}
+                  fontFamily="Lato"
+                >
+                  Montage Vidéo
+                </Link>
+              </NextLink>
+            </VStack>
+          </VStack>
+
+          {/* Section Entreprise */}
+          <VStack align="flex-start" spacing={4}>
             <ListHeader>Entreprise</ListHeader>
-            <Link href={'#'}>À propos</Link>
-            <Link href={'#'}>Carrières</Link>
-            <Link href={'#'}>Contact</Link>
-            <Link href={'#'}>Blog</Link>
-          </Stack>
-          <Stack align={'flex-start'}>
+            <VStack align="flex-start" spacing={3}>
+              <NextLink href="/about" passHref>
+                <Link
+                  color="gray.300"
+                  fontSize="sm"
+                  _hover={{ color: "secondary.400" }}
+                  fontFamily="Lato"
+                >
+                  À propos
+                </Link>
+              </NextLink>
+              <NextLink href="/#team" passHref>
+                <Link
+                  color="gray.300"
+                  fontSize="sm"
+                  _hover={{ color: "secondary.400" }}
+                  fontFamily="Lato"
+                >
+                  Notre Équipe
+                </Link>
+              </NextLink>
+              <NextLink href="/#projects" passHref>
+                <Link
+                  color="gray.300"
+                  fontSize="sm"
+                  _hover={{ color: "secondary.400" }}
+                  fontFamily="Lato"
+                >
+                  Nos Projets
+                </Link>
+              </NextLink>
+              <NextLink href="/#contact" passHref>
+                <Link
+                  color="gray.300"
+                  fontSize="sm"
+                  _hover={{ color: "secondary.400" }}
+                  fontFamily="Lato"
+                >
+                  Contact
+                </Link>
+              </NextLink>
+              <Link
+                href="#"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Carrières
+              </Link>
+            </VStack>
+          </VStack>
+
+          {/* Section Support */}
+          <VStack align="flex-start" spacing={4}>
             <ListHeader>Support</ListHeader>
-            <Link href={'#'}>Centre d&apos;aide</Link>
-            <Link href={'#'}>Mentions légales</Link>
-            <Link href={'#'}>Politique de confidentialité</Link>
-            <Link href={'#'}>Conditions d&apos;utilisation</Link>
-          </Stack>
+            <VStack align="flex-start" spacing={3}>
+              <Link
+                href="#"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Centre d&apos;aide
+              </Link>
+              <Link
+                href="#"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                FAQ
+              </Link>
+              <Link
+                href="#"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Mentions légales
+              </Link>
+              <Link
+                href="#"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Politique de confidentialité
+              </Link>
+              <Link
+                href="#"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Conditions d&apos;utilisation
+              </Link>
+            </VStack>
+          </VStack>
         </SimpleGrid>
+
+        {/* Divider et Copyright */}
+        <Divider my={8} borderColor="whiteAlpha.300" />
+
+        <Flex
+          direction={{ base: 'column', md: 'row' }}
+          justify="space-between"
+          align="center"
+          gap={4}
+        >
+          <Text fontSize="sm" color="gray.300" fontFamily="Lato">
+            © 2025 Benilab Services. Tous droits réservés
+          </Text>
+          <HStack spacing={6} fontSize="sm">
+            <Link
+              href="#"
+              color="gray.300"
+              _hover={{ color: "secondary.400" }}
+              fontFamily="Lato"
+            >
+              Politique de cookies
+            </Link>
+            <Link
+              href="#"
+              color="gray.300"
+              _hover={{ color: "secondary.400" }}
+              fontFamily="Lato"
+            >
+              Plan du site
+            </Link>
+          </HStack>
+        </Flex>
       </Container>
     </Box>
   );

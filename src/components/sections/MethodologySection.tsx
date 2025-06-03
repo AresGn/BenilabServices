@@ -55,7 +55,7 @@ const methodologySteps = [
 
 export const MethodologySection = () => {
   return (
-    <Box as="section" id="methodology" py={16} bg="primary.100">
+    <Box as="section" id="methodology" py={16} bg="white">
       <Container maxW="container.xl">
         <Heading as="h2" size="xl" textAlign="center" mb={12} color="primary.700">
           Notre Méthodologie de Travail
@@ -68,4 +68,4 @@ export const MethodologySection = () => {
       </Container>
     </Box>
   );
-}; 
+};

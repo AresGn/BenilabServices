@@ -32,7 +32,7 @@ function Testimonials() {
   }, [api, current]);
 
   return (
-    <div className="w-full py-20 lg:py-40" style={{ background: "#c0d9ea" }}>
+    <div className="w-full py-20 lg:py-40" style={{ background: "#e6f0f7" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex flex-col gap-12 lg:gap-16">
           <Heading as="h2" size="xl" textAlign="center" mb={8} color="primary.700">
