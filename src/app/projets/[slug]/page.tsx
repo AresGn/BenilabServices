@@ -19,16 +19,19 @@ import { FaArrowLeft, FaExternalLinkAlt, FaCalendarAlt, FaUsers } from 'react-ic
 import { projects } from '../../../data/projects';
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const bgColor = useColorModeValue('gray.50', 'gray.900');
-  
+
+  // Attendre la résolution des paramètres
+  const resolvedParams = await params;
+
   // Trouver le projet correspondant au slug
-  const project = projects.find(p => p.id === params.slug);
+  const project = projects.find(p => p.id === resolvedParams.slug);
   
   if (!project) {
     notFound();
@@ -117,8 +120,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 px={3}
                 py={1}
                 fontSize="sm"
-                leftIcon={<FaCalendarAlt />}
+                display="flex"
+                alignItems="center"
+                gap={2}
               >
+                <FaCalendarAlt />
                 {getStatusText(project.status)}
               </Badge>
             </HStack>
