@@ -7,7 +7,7 @@ import { services } from '../../data/services';
 
 export const ServicesSection = () => {
   return (
-    <Box py={{ base: '12', md: '20' }} bg={'gray.50'}>
+    <Box as="section" id="services" py={{ base: '12', md: '20' }} bg={'gray.50'}>
       <Container maxW="container.xl">
         <VStack spacing={{ base: '8', md: '12' }} alignItems="center">
           <SectionTitle

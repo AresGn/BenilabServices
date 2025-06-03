@@ -1,6 +1,6 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Voir https://help.github.com/articles/ignoring-files/ pour plus d'informations sur l'ignorance des fichiers.
 
-# dependencies
+# dépendances
 /node_modules
 /.pnp
 .pnp.*
@@ -10,7 +10,7 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
+# tests
 /coverage
 
 # next.js
@@ -20,7 +20,7 @@
 # production
 /build
 
-# misc
+# divers
 .DS_Store
 *.pem
 
@@ -30,7 +30,7 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# fichiers d'environnement (peuvent être commit si besoin)
 .env*
 
 # vercel
@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignorer tous les fichiers .md sauf README.md (insensible à la casse)
+*.md
+!README.md
+!README.MD

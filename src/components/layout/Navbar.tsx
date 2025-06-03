@@ -89,18 +89,24 @@ export const Navbar = () => {
 
           <Flex alignItems={'center'}>
             <Button
+              as={Link}
+              href="#contact"
               colorScheme="primary"
               variant="outline"
               size="md"
               mr={4}
               display={{ base: 'none', md: 'inline-flex' }}
+              _hover={{ textDecoration: 'none' }}
             >
               Demander un devis
             </Button>
             <Button
+              as={Link}
+              href="#contact"
               colorScheme="primary"
               size="md"
               display={{ base: 'none', md: 'inline-flex' }}
+              _hover={{ textDecoration: 'none' }}
             >
               Nous contacter
             </Button>
@@ -115,10 +121,22 @@ export const Navbar = () => {
                   {link.name}
                 </NavLink>
               ))}
-              <Button variant="outline" w="full">
+              <Button
+                as={Link}
+                href="#contact"
+                variant="outline"
+                w="full"
+                _hover={{ textDecoration: 'none' }}
+              >
                 Demander un devis
               </Button>
-              <Button variant="primary" w="full">
+              <Button
+                as={Link}
+                href="#contact"
+                variant="primary"
+                w="full"
+                _hover={{ textDecoration: 'none' }}
+              >
                 Nous contacter
               </Button>
             </Stack>

@@ -62,7 +62,7 @@ const ValueCard = ({ icon, title, description }: ValueCardProps) => (
 
 export const AboutSection = () => {
   return (
-    <Box as="section" bg="gray.50" py={{ base: 16, md: 20 }}>
+    <Box as="section" id="about" bg="gray.50" py={{ base: 16, md: 20 }}>
       <Container maxW="container.xl">
         <VStack spacing={16} align="stretch">
           {/* Titre de la section avec icône */}

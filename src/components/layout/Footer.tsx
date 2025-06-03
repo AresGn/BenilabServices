@@ -191,56 +191,56 @@ export const Footer = () => {
           <VStack align="flex-start" spacing={4}>
             <ListHeader>Services</ListHeader>
             <VStack align="flex-start" spacing={3}>
-              <NextLink href="/#services" passHref>
-                <Link
-                  color="gray.300"
-                  fontSize="sm"
-                  _hover={{ color: "secondary.400" }}
-                  fontFamily="Lato"
-                >
-                  Développement Web
-                </Link>
-              </NextLink>
-              <NextLink href="/#services" passHref>
-                <Link
-                  color="gray.300"
-                  fontSize="sm"
-                  _hover={{ color: "secondary.400" }}
-                  fontFamily="Lato"
-                >
-                  Marketing Digital
-                </Link>
-              </NextLink>
-              <NextLink href="/#services" passHref>
-                <Link
-                  color="gray.300"
-                  fontSize="sm"
-                  _hover={{ color: "secondary.400" }}
-                  fontFamily="Lato"
-                >
-                  Design UX/UI
-                </Link>
-              </NextLink>
-              <NextLink href="/#services" passHref>
-                <Link
-                  color="gray.300"
-                  fontSize="sm"
-                  _hover={{ color: "secondary.400" }}
-                  fontFamily="Lato"
-                >
-                  Conseil Digital
-                </Link>
-              </NextLink>
-              <NextLink href="/#services" passHref>
-                <Link
-                  color="gray.300"
-                  fontSize="sm"
-                  _hover={{ color: "secondary.400" }}
-                  fontFamily="Lato"
-                >
-                  Montage Vidéo
-                </Link>
-              </NextLink>
+              <Link
+                as={NextLink}
+                href="/#services"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Développement Web
+              </Link>
+              <Link
+                as={NextLink}
+                href="/#services"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Marketing Digital
+              </Link>
+              <Link
+                as={NextLink}
+                href="/#services"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Design UX/UI
+              </Link>
+              <Link
+                as={NextLink}
+                href="/#services"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Conseil Digital
+              </Link>
+              <Link
+                as={NextLink}
+                href="/#services"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Montage Vidéo
+              </Link>
             </VStack>
           </VStack>
 
@@ -248,46 +248,46 @@ export const Footer = () => {
           <VStack align="flex-start" spacing={4}>
             <ListHeader>Entreprise</ListHeader>
             <VStack align="flex-start" spacing={3}>
-              <NextLink href="/about" passHref>
-                <Link
-                  color="gray.300"
-                  fontSize="sm"
-                  _hover={{ color: "secondary.400" }}
-                  fontFamily="Lato"
-                >
-                  À propos
-                </Link>
-              </NextLink>
-              <NextLink href="/#team" passHref>
-                <Link
-                  color="gray.300"
-                  fontSize="sm"
-                  _hover={{ color: "secondary.400" }}
-                  fontFamily="Lato"
-                >
-                  Notre Équipe
-                </Link>
-              </NextLink>
-              <NextLink href="/#projects" passHref>
-                <Link
-                  color="gray.300"
-                  fontSize="sm"
-                  _hover={{ color: "secondary.400" }}
-                  fontFamily="Lato"
-                >
-                  Nos Projets
-                </Link>
-              </NextLink>
-              <NextLink href="/#contact" passHref>
-                <Link
-                  color="gray.300"
-                  fontSize="sm"
-                  _hover={{ color: "secondary.400" }}
-                  fontFamily="Lato"
-                >
-                  Contact
-                </Link>
-              </NextLink>
+              <Link
+                as={NextLink}
+                href="/about"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                À propos
+              </Link>
+              <Link
+                as={NextLink}
+                href="/#team"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Notre Équipe
+              </Link>
+              <Link
+                as={NextLink}
+                href="/#projects"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Nos Projets
+              </Link>
+              <Link
+                as={NextLink}
+                href="/#contact"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Contact
+              </Link>
               <Link
                 href="#"
                 color="gray.300"
