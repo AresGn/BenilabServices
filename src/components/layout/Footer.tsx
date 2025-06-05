@@ -260,7 +260,7 @@ export const Footer = () => {
               </Link>
               <Link
                 as={NextLink}
-                href="/#team"
+                href="/about#team"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}
@@ -270,7 +270,7 @@ export const Footer = () => {
               </Link>
               <Link
                 as={NextLink}
-                href="/#projects"
+                href="/projets"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}
@@ -280,7 +280,17 @@ export const Footer = () => {
               </Link>
               <Link
                 as={NextLink}
-                href="/#contact"
+                href="/blog"
+                color="gray.300"
+                fontSize="sm"
+                _hover={{ color: "secondary.400" }}
+                fontFamily="Lato"
+              >
+                Blog
+              </Link>
+              <Link
+                as={NextLink}
+                href="/contact"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}
@@ -323,7 +333,7 @@ export const Footer = () => {
                 FAQ
               </Link>
               <Link
-                href="#"
+                href="/mentions-legales"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}
@@ -332,7 +342,7 @@ export const Footer = () => {
                 Mentions légales
               </Link>
               <Link
-                href="#"
+                href="/politique-confidentialite"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}
@@ -341,7 +351,7 @@ export const Footer = () => {
                 Politique de confidentialité
               </Link>
               <Link
-                href="#"
+                href="/conditions-utilisation"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}
@@ -375,7 +385,7 @@ export const Footer = () => {
               Politique de cookies
             </Link>
             <Link
-              href="#"
+              href="/plan-du-site"
               color="gray.300"
               _hover={{ color: "secondary.400" }}
               fontFamily="Lato"

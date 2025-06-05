@@ -17,10 +17,11 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons';
 
 const Links = [
-  { name: 'Services', href: '#services' },
-  { name: 'Projets', href: '#projects' },
-  { name: 'À propos', href: '#about' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Services', href: '/services' },
+  { name: 'Projets', href: '/projets' },
+  { name: 'À propos', href: '/about' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const NavLink = ({ children, href }: { children: string; href: string }) => (
@@ -90,7 +91,7 @@ export const Navbar = () => {
           <Flex alignItems={'center'}>
             <Button
               as={Link}
-              href="#contact"
+              href="/contact"
               colorScheme="primary"
               variant="outline"
               size="md"
@@ -102,7 +103,7 @@ export const Navbar = () => {
             </Button>
             <Button
               as={Link}
-              href="#contact"
+              href="/contact"
               colorScheme="primary"
               size="md"
               display={{ base: 'none', md: 'inline-flex' }}
@@ -123,7 +124,7 @@ export const Navbar = () => {
               ))}
               <Button
                 as={Link}
-                href="#contact"
+                href="/contact"
                 variant="outline"
                 w="full"
                 _hover={{ textDecoration: 'none' }}
@@ -132,7 +133,7 @@ export const Navbar = () => {
               </Button>
               <Button
                 as={Link}
-                href="#contact"
+                href="/contact"
                 variant="primary"
                 w="full"
                 _hover={{ textDecoration: 'none' }}
