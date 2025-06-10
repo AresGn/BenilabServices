@@ -92,6 +92,8 @@ export const HeroSection = () => {
                   transform: "translateY(0)"
                 }}
                 transition="all 0.3s ease"
+                as="a"
+                href="/#contact"
               >
                 Démarrer un projet
               </Button>
@@ -115,6 +117,8 @@ export const HeroSection = () => {
                   transform: "translateY(0)"
                 }}
                 transition="all 0.3s ease"
+                as="a"
+                href="/services"
               >
                 Découvrir nos services
               </Button>

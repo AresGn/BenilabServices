@@ -139,7 +139,7 @@ export default function ProjectsPage() {
               Vous avez un projet en tête ?
             </Heading>
             <Text color="gray.600" mb={6} maxW="600px" mx="auto">
-              Rejoignez nos clients satisfaits et donnez vie à vos idées avec notre expertise. 
+              Rejoignez nos clients satisfaits et donnez vie à vos idées avec notre expertise.
               Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.
             </Text>
             <Button
@@ -166,6 +166,9 @@ export default function ProjectsPage() {
               Démarrer mon projet
             </Button>
           </Box>
+
+          {/* Espacement avant le footer */}
+          <Box h={16} />
         </VStack>
       </Container>
     </Box>

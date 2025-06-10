@@ -19,6 +19,8 @@ export default function AboutPage() {
           <ValuesSection />
           <TeamSection />
           <AboutCTA />
+          {/* Espacement avant le footer */}
+          <Box h={16} />
         </VStack>
       </Container>
     </Box>

@@ -1,11 +1,7 @@
-// Métadonnées pour le SEO
-export const metadata = {
-  title: 'Contact - Benilab Services',
-  description: 'Contactez Benilab Services pour vos projets digitaux. Notre équipe d\'experts vous accompagne dans votre transformation numérique au Bénin.',
-  keywords: 'contact, Benilab Services, agence digitale, Bénin, Cotonou, devis, projet digital',
-};
-
 'use client';
+
+// Note: Les métadonnées sont maintenant gérées dans layout.tsx ou via generateMetadata
+// car cette page utilise 'use client' pour les hooks React
 
 import {
   Box,
@@ -424,6 +420,9 @@ export default function ContactPage() {
               </HStack>
             </VStack>
           </Box>
+
+          {/* Espacement avant le footer */}
+          <Box h={16} />
         </VStack>
       </Container>
     </Box>

@@ -10,6 +10,10 @@ export interface Service {
     starting: string;
     currency: string;
   };
+  useCases?: string[];
+  benefits?: string[];
+  process?: string[];
+  deliverables?: string[];
 }
 
 export const services: Service[] = [
@@ -31,7 +35,39 @@ export const services: Service[] = [
     pricing: {
       starting: '150 000',
       currency: 'FCFA'
-    }
+    },
+    useCases: [
+      'Site vitrine pour entreprise ou professionnel',
+      'Boutique en ligne avec paiement intégré',
+      'Plateforme de réservation en ligne',
+      'Application mobile pour service client',
+      'Portail web d\'entreprise avec gestion utilisateurs',
+      'Blog professionnel avec système de gestion de contenu'
+    ],
+    benefits: [
+      'Présence digitale professionnelle 24h/7j',
+      'Augmentation de la visibilité et des ventes',
+      'Automatisation des processus métier',
+      'Amélioration de l\'expérience client',
+      'Accès mobile pour vos clients',
+      'Évolutivité selon vos besoins'
+    ],
+    process: [
+      'Analyse des besoins et cahier des charges',
+      'Conception UX/UI et maquettes',
+      'Développement et intégration',
+      'Tests et optimisations',
+      'Mise en ligne et formation',
+      'Maintenance et évolutions'
+    ],
+    deliverables: [
+      'Site web ou application fonctionnelle',
+      'Code source documenté',
+      'Formation à l\'administration',
+      'Documentation technique',
+      'Certificat SSL et sécurisation',
+      '3 mois de support inclus'
+    ]
   },
   {
     id: 'marketing-digital',
@@ -51,7 +87,39 @@ export const services: Service[] = [
     pricing: {
       starting: '75 000',
       currency: 'FCFA'
-    }
+    },
+    useCases: [
+      'Lancement de produit avec campagne publicitaire',
+      'Génération de leads qualifiés pour B2B',
+      'Augmentation des ventes e-commerce',
+      'Fidélisation client par email marketing',
+      'Optimisation du taux de conversion',
+      'Développement de la notoriété de marque'
+    ],
+    benefits: [
+      'ROI mesurable et optimisé',
+      'Ciblage précis de votre audience',
+      'Automatisation des ventes',
+      'Réduction du coût d\'acquisition client',
+      'Amélioration de la conversion',
+      'Données analytiques détaillées'
+    ],
+    process: [
+      'Audit marketing et analyse concurrentielle',
+      'Définition de la stratégie et objectifs',
+      'Création des campagnes et contenus',
+      'Lancement et monitoring en temps réel',
+      'Optimisation continue des performances',
+      'Reporting et recommandations'
+    ],
+    deliverables: [
+      'Stratégie marketing documentée',
+      'Campagnes publicitaires configurées',
+      'Tunnels de vente opérationnels',
+      'Tableaux de bord analytics',
+      'Rapports de performance mensuels',
+      'Formation aux outils marketing'
+    ]
   },
   {
     id: 'design-graphique',
@@ -71,7 +139,39 @@ export const services: Service[] = [
     pricing: {
       starting: '25 000',
       currency: 'FCFA'
-    }
+    },
+    useCases: [
+      'Création d\'identité visuelle pour startup',
+      'Refonte de logo et charte graphique',
+      'Supports marketing pour événement',
+      'Packaging produit et étiquetage',
+      'Visuels pour campagne publicitaire',
+      'Matériel de communication corporate'
+    ],
+    benefits: [
+      'Image de marque professionnelle et mémorable',
+      'Cohérence visuelle sur tous supports',
+      'Différenciation de la concurrence',
+      'Augmentation de la reconnaissance de marque',
+      'Communication visuelle efficace',
+      'Supports marketing impactants'
+    ],
+    process: [
+      'Brief créatif et analyse de la marque',
+      'Recherche et inspiration créative',
+      'Création de concepts et propositions',
+      'Développement et affinement',
+      'Finalisation et déclinaisons',
+      'Livraison des fichiers sources'
+    ],
+    deliverables: [
+      'Logo en plusieurs formats (AI, PNG, SVG)',
+      'Charte graphique complète',
+      'Supports de communication finalisés',
+      'Fichiers sources modifiables',
+      'Guide d\'utilisation de la marque',
+      'Déclinaisons pour différents supports'
+    ]
   },
   {
     id: 'video-content',
@@ -91,7 +191,39 @@ export const services: Service[] = [
     pricing: {
       starting: '15 000',
       currency: 'FCFA'
-    }
+    },
+    useCases: [
+      'Vidéos promotionnelles pour réseaux sociaux',
+      'Tutoriels et formations en ligne',
+      'Présentation produit avec avatar IA',
+      'Contenu viral pour TikTok et Instagram',
+      'Vidéos explicatives pour services',
+      'Témoignages clients et interviews'
+    ],
+    benefits: [
+      'Engagement élevé sur les réseaux sociaux',
+      'Communication claire et mémorable',
+      'Augmentation du taux de conversion',
+      'Contenu viral et partageable',
+      'Formation et éducation efficaces',
+      'Présence moderne et innovante'
+    ],
+    process: [
+      'Brief créatif et scénarisation',
+      'Collecte des ressources (images, vidéos, audio)',
+      'Montage et post-production',
+      'Ajout d\'effets et animations',
+      'Révisions et ajustements',
+      'Livraison dans les formats requis'
+    ],
+    deliverables: [
+      'Vidéos finales en haute qualité',
+      'Versions adaptées par plateforme',
+      'Fichiers sources de montage',
+      'Sous-titres et transcriptions',
+      'Miniatures et visuels associés',
+      'Guide d\'utilisation et diffusion'
+    ]
   },
   {
     id: 'community-management',
@@ -111,6 +243,38 @@ export const services: Service[] = [
     pricing: {
       starting: '50 000',
       currency: 'FCFA'
-    }
+    },
+    useCases: [
+      'Lancement de marque sur les réseaux sociaux',
+      'Gestion quotidienne de communauté',
+      'Campagnes d\'engagement et concours',
+      'Service client via réseaux sociaux',
+      'Influence marketing et partenariats',
+      'Gestion de crise et e-réputation'
+    ],
+    benefits: [
+      'Communauté engagée et fidèle',
+      'Augmentation de la notoriété de marque',
+      'Amélioration de l\'image de marque',
+      'Génération de leads qualifiés',
+      'Service client réactif 24h/7j',
+      'Insights précieux sur votre audience'
+    ],
+    process: [
+      'Audit des réseaux sociaux existants',
+      'Définition de la stratégie éditoriale',
+      'Création du planning de contenu',
+      'Publication et animation quotidienne',
+      'Monitoring et engagement communauté',
+      'Analyse et optimisation continue'
+    ],
+    deliverables: [
+      'Stratégie éditoriale documentée',
+      'Planning de contenu mensuel',
+      'Visuels et contenus créés',
+      'Gestion quotidienne des comptes',
+      'Rapports de performance mensuels',
+      'Recommandations d\'optimisation'
+    ]
   }
 ];

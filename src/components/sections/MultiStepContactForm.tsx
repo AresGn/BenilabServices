@@ -128,7 +128,7 @@ export const MultiStepContactForm = () => {
       <Text fontSize="lg" color={labelColor} fontWeight="bold" mb={4}>
         Vous avez un projet (ou juste une idée) ? On vous propose un rendez-vous de 30 minutes pour en discuter.<br />
         <span style={{ color: '#666', fontWeight: 400 }}>
-          Pas de jargon, pas d&apos;engagement. Juste une première étape vers un site qui vous ressemble.
+          Pas de jargon, pas d&apos;engagement. Juste une première étape vers une solution digitale qui vous ressemble.
         </span>
       </Text>
       <Progress value={progress} size="sm" colorScheme="primary" mb={6} borderRadius="full" />

@@ -152,6 +152,9 @@ export default function MentionsLegalesPage() {
             </VStack>
           </VStack>
         </Box>
+
+        {/* Espacement avant le footer */}
+        <Box h={16} />
       </Container>
     </Box>
   );

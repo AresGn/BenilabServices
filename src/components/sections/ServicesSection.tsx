@@ -21,6 +21,7 @@ export const ServicesSection = () => {
                 icon={service.icon}
                 title={service.title}
                 description={service.description}
+                link={`/services/${service.id}`}
               />
             ))}
           </SimpleGrid>

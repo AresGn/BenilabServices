@@ -1,11 +1,7 @@
-// Métadonnées pour le SEO
-export const metadata = {
-  title: 'Blog & Actualités - Benilab Services',
-  description: 'Découvrez nos articles sur les tendances digitales, les bonnes pratiques et les innovations qui façonnent l\'avenir du numérique en Afrique.',
-  keywords: 'blog, actualités, digital, transformation digitale, Afrique, Bénin, tendances, innovation',
-};
-
 'use client';
+
+// Note: Les métadonnées sont maintenant gérées dans layout.tsx ou via generateMetadata
+// car cette page utilise 'use client' pour les hooks React
 
 import {
   Box,
@@ -272,6 +268,9 @@ export default function BlogPage() {
               </Button>
             </VStack>
           </Box>
+
+          {/* Espacement avant le footer */}
+          <Box h={16} />
         </VStack>
       </Container>
     </Box>

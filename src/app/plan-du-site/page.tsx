@@ -320,6 +320,9 @@ export default function PlanDuSitePage() {
               </SimpleGrid>
             </VStack>
           </Box>
+
+          {/* Espacement avant le footer */}
+          <Box h={16} />
         </VStack>
       </Container>
     </Box>

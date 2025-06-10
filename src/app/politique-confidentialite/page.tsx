@@ -217,6 +217,9 @@ export default function PolitiqueConfidentialitePage() {
             </VStack>
           </VStack>
         </Box>
+
+        {/* Espacement avant le footer */}
+        <Box h={16} />
       </Container>
     </Box>
   );
