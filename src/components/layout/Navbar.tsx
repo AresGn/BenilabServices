@@ -15,6 +15,7 @@ import {
   Button
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
+import NextLink from 'next/link';
 
 const Links = [
   { name: 'Services', href: '/services' },
@@ -72,12 +73,17 @@ export const Navbar = () => {
           
           <HStack {...stackProps}>
             <Box>
-              <Image
-                src="/images/logo/logo.jpeg"
-                alt="Benilab Services"
-                h="40px"
-                w="auto"
-              />
+              <Link as={NextLink} href="/" _hover={{ textDecoration: 'none' }}>
+                <Image
+                  src="/images/logo/logo.jpeg"
+                  alt="Benilab Services"
+                  h="40px"
+                  w="auto"
+                  cursor="pointer"
+                  _hover={{ opacity: 0.8 }}
+                  transition="opacity 0.2s"
+                />
+              </Link>
             </Box>
             <HStack as={'nav'} display={{ base: 'none', md: 'flex' }} gap={4}>
               {Links.map((link) => (
@@ -90,7 +96,7 @@ export const Navbar = () => {
 
           <Flex alignItems={'center'}>
             <Button
-              as={Link}
+              as={NextLink}
               href="/contact"
               colorScheme="primary"
               variant="outline"
@@ -102,7 +108,7 @@ export const Navbar = () => {
               Demander un devis
             </Button>
             <Button
-              as={Link}
+              as={NextLink}
               href="/contact"
               colorScheme="primary"
               size="md"
@@ -123,7 +129,7 @@ export const Navbar = () => {
                 </NavLink>
               ))}
               <Button
-                as={Link}
+                as={NextLink}
                 href="/contact"
                 variant="outline"
                 w="full"
@@ -132,7 +138,7 @@ export const Navbar = () => {
                 Demander un devis
               </Button>
               <Button
-                as={Link}
+                as={NextLink}
                 href="/contact"
                 variant="primary"
                 w="full"

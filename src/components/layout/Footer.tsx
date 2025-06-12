@@ -193,7 +193,7 @@ export const Footer = () => {
             <VStack align="flex-start" spacing={3}>
               <Link
                 as={NextLink}
-                href="/#services"
+                href="/services/web-development"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}
@@ -203,7 +203,7 @@ export const Footer = () => {
               </Link>
               <Link
                 as={NextLink}
-                href="/#services"
+                href="/services/marketing-digital"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}
@@ -213,33 +213,33 @@ export const Footer = () => {
               </Link>
               <Link
                 as={NextLink}
-                href="/#services"
+                href="/services/design-graphique"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}
                 fontFamily="Lato"
               >
-                Design UX/UI
+                Design Graphique
               </Link>
               <Link
                 as={NextLink}
-                href="/#services"
+                href="/services/video-content"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}
                 fontFamily="Lato"
               >
-                Conseil Digital
+                Production Vidéo
               </Link>
               <Link
                 as={NextLink}
-                href="/#services"
+                href="/services/community-management"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}
                 fontFamily="Lato"
               >
-                Montage Vidéo
+                Community Management
               </Link>
             </VStack>
           </VStack>
@@ -324,7 +324,8 @@ export const Footer = () => {
                 Centre d&apos;aide
               </Link>
               <Link
-                href="#"
+                as={NextLink}
+                href="/faq"
                 color="gray.300"
                 fontSize="sm"
                 _hover={{ color: "secondary.400" }}

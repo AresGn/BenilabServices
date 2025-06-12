@@ -32,6 +32,7 @@ export const ProjectsSection = () => {
                 category={project.category}
                 technologies={project.technologies}
                 status={project.status}
+                link={`/projets/${project.id}`}
               />
             ))}
           </Box>

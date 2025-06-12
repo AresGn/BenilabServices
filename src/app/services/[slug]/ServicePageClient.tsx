@@ -19,8 +19,15 @@ import {
   Tab,
   TabPanel,
   Grid,
-  GridItem
+  GridItem,
+  useBreakpointValue,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  useDisclosure
 } from '@chakra-ui/react';
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
   FaArrowLeft,
   FaExternalLinkAlt,
@@ -36,6 +43,7 @@ import {
   FaLightbulb
 } from 'react-icons/fa';
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface Service {
   id: string;
@@ -60,6 +68,17 @@ interface ServicePageClientProps {
 }
 
 export default function ServicePageClient({ service }: ServicePageClientProps) {
+  const [activeTab, setActiveTab] = useState(0);
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
+  const tabs = [
+    { label: 'Fonctionnalités', shortLabel: 'Fonctions', icon: FaCheckCircle },
+    { label: 'Cas d\'usage', shortLabel: 'Cas', icon: FaBullseye },
+    { label: 'Avantages', shortLabel: 'Avantages', icon: FaStar },
+    { label: 'Processus', shortLabel: 'Processus', icon: FaCogs },
+    { label: 'Livrables', shortLabel: 'Livrables', icon: FaGift }
+  ];
+
   return (
     <Box bg="gray.50" minH="100vh" pt={20}>
       <Container maxW="container.xl" py={8}>
@@ -150,509 +169,287 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
 
           {/* Contenu détaillé avec onglets */}
           <Box bg="white" borderRadius="xl" boxShadow="lg" overflow="hidden">
-            <Tabs variant="line" colorScheme="primary" isLazy index={0}>
-              <TabList
-                bg="white"
-                px={8}
-                py={4}
-                borderBottom="2px solid"
-                borderColor="gray.100"
-                overflowX="auto"
-                css={{
-                  '&::-webkit-scrollbar': {
-                    height: '4px',
-                  },
-                  '&::-webkit-scrollbar-track': {
-                    background: '#f1f1f1',
-                  },
-                  '&::-webkit-scrollbar-thumb': {
-                    background: '#c1c1c1',
-                    borderRadius: '2px',
-                  },
-                }}
-              >
-                <Tab
-                  fontFamily="Poppins"
-                  fontWeight="medium"
-                  color="gray.600"
-                  fontSize="md"
-                  px={6}
-                  py={3}
-                  minW="fit-content"
-                  _selected={{
-                    color: "primary.600",
-                    borderColor: "primary.500",
-                    borderBottomWidth: "3px",
-                    fontWeight: "semibold"
-                  }}
-                  _hover={{
-                    color: "primary.500",
-                    bg: "primary.50"
-                  }}
-                  _focus={{
-                    boxShadow: "0 0 0 3px rgba(59, 130, 246, 0.1)"
-                  }}
-                  transition="all 0.2s ease"
-                >
-                  <Icon as={FaCheckCircle} mr={2} />
-                  Fonctionnalités
-                </Tab>
-                <Tab
-                  fontFamily="Poppins"
-                  fontWeight="medium"
-                  color="gray.600"
-                  fontSize="md"
-                  px={6}
-                  py={3}
-                  minW="fit-content"
-                  _selected={{
-                    color: "primary.600",
-                    borderColor: "primary.500",
-                    borderBottomWidth: "3px",
-                    fontWeight: "semibold"
-                  }}
-                  _hover={{
-                    color: "primary.500",
-                    bg: "primary.50"
-                  }}
-                  _focus={{
-                    boxShadow: "0 0 0 3px rgba(59, 130, 246, 0.1)"
-                  }}
-                  transition="all 0.2s ease"
-                >
-                  <Icon as={FaBullseye} mr={2} />
-                  Cas d&apos;usage
-                </Tab>
-                <Tab
-                  fontFamily="Poppins"
-                  fontWeight="medium"
-                  color="gray.600"
-                  fontSize="md"
-                  px={6}
-                  py={3}
-                  minW="fit-content"
-                  _selected={{
-                    color: "primary.600",
-                    borderColor: "primary.500",
-                    borderBottomWidth: "3px",
-                    fontWeight: "semibold"
-                  }}
-                  _hover={{
-                    color: "primary.500",
-                    bg: "primary.50"
-                  }}
-                  _focus={{
-                    boxShadow: "0 0 0 3px rgba(59, 130, 246, 0.1)"
-                  }}
-                  transition="all 0.2s ease"
-                >
-                  <Icon as={FaStar} mr={2} />
-                  Avantages
-                </Tab>
-                <Tab
-                  fontFamily="Poppins"
-                  fontWeight="medium"
-                  color="gray.600"
-                  fontSize="md"
-                  px={6}
-                  py={3}
-                  minW="fit-content"
-                  _selected={{
-                    color: "primary.600",
-                    borderColor: "primary.500",
-                    borderBottomWidth: "3px",
-                    fontWeight: "semibold"
-                  }}
-                  _hover={{
-                    color: "primary.500",
-                    bg: "primary.50"
-                  }}
-                  _focus={{
-                    boxShadow: "0 0 0 3px rgba(59, 130, 246, 0.1)"
-                  }}
-                  transition="all 0.2s ease"
-                >
-                  <Icon as={FaCogs} mr={2} />
-                  Processus
-                </Tab>
-                <Tab
-                  fontFamily="Poppins"
-                  fontWeight="medium"
-                  color="gray.600"
-                  fontSize="md"
-                  px={6}
-                  py={3}
-                  minW="fit-content"
-                  _selected={{
-                    color: "primary.600",
-                    borderColor: "primary.500",
-                    borderBottomWidth: "3px",
-                    fontWeight: "semibold"
-                  }}
-                  _hover={{
-                    color: "primary.500",
-                    bg: "primary.50"
-                  }}
-                  _focus={{
-                    boxShadow: "0 0 0 3px rgba(59, 130, 246, 0.1)"
-                  }}
-                  transition="all 0.2s ease"
-                >
-                  <Icon as={FaGift} mr={2} />
-                  Livrables
-                </Tab>
-              </TabList>
-
-              <TabPanels>
-                {/* Onglet Fonctionnalités */}
-                <TabPanel p={8} bg="gray.50">
-                  <VStack spacing={8} align="stretch">
-                    <HStack spacing={4}>
-                      <Icon as={FaCheckCircle} color="primary.500" boxSize={8} />
-                      <VStack align="flex-start" spacing={1}>
-                        <Heading as="h2" size="lg" color="primary.600" fontFamily="Poppins">
-                          Fonctionnalités incluses
-                        </Heading>
-                        <Text color="gray.600" fontFamily="Lato" fontSize="md">
-                          Découvrez tout ce qui est inclus dans ce service
-                        </Text>
-                      </VStack>
-                    </HStack>
-
-                    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
-                      {service.features.map((feature, index) => (
-                        <Box
+            {isMobile ? (
+              // Version mobile avec menu déroulant
+              <Box>
+                <Box bg="white" px={4} py={4} borderBottom="2px solid" borderColor="gray.100">
+                  <Menu>
+                    <MenuButton
+                      as={Button}
+                      rightIcon={<ChevronDownIcon />}
+                      w="100%"
+                      justifyContent="space-between"
+                      fontFamily="Poppins"
+                      fontWeight="medium"
+                      color="primary.600"
+                      bg="gray.50"
+                      _hover={{ bg: "gray.100" }}
+                      _active={{ bg: "gray.100" }}
+                      size="lg"
+                    >
+                      <HStack spacing={2}>
+                        <Icon as={tabs[activeTab].icon} />
+                        <Text>{tabs[activeTab].label}</Text>
+                      </HStack>
+                    </MenuButton>
+                    <MenuList zIndex={1000}>
+                      {tabs.map((tab, index) => (
+                        <MenuItem
                           key={index}
-                          p={6}
-                          bg="white"
-                          borderRadius="xl"
-                          boxShadow="sm"
-                          border="1px solid"
-                          borderColor="gray.200"
-                          _hover={{
-                            boxShadow: "md",
-                            transform: "translateY(-2px)",
-                            borderColor: "primary.200"
-                          }}
-                          transition="all 0.2s ease"
+                          onClick={() => setActiveTab(index)}
+                          bg={activeTab === index ? "primary.50" : "white"}
+                          color={activeTab === index ? "primary.600" : "gray.700"}
+                          _hover={{ bg: "primary.50", color: "primary.600" }}
+                          fontFamily="Poppins"
                         >
-                          <HStack spacing={4} align="flex-start">
-                            <Icon
-                              as={FaCheckCircle}
-                              color="primary.500"
-                              boxSize={5}
-                              mt={1}
-                              flexShrink={0}
-                            />
-                            <Text
-                              fontFamily="Lato"
-                              fontWeight="medium"
-                              color="gray.700"
-                              fontSize="md"
-                              lineHeight="1.6"
-                            >
-                              {feature}
-                            </Text>
+                          <HStack spacing={3}>
+                            <Icon as={tab.icon} />
+                            <Text>{tab.label}</Text>
                           </HStack>
-                        </Box>
+                        </MenuItem>
                       ))}
-                    </SimpleGrid>
+                    </MenuList>
+                  </Menu>
+                </Box>
+              </Box>
+            ) : (
+              // Version desktop avec onglets classiques
+              <Tabs variant="line" colorScheme="primary" isLazy index={activeTab} onChange={setActiveTab}>
+                <TabList
+                  bg="white"
+                  px={8}
+                  py={4}
+                  borderBottom="2px solid"
+                  borderColor="gray.100"
+                >
+                  {tabs.map((tab, index) => (
+                    <Tab
+                      key={index}
+                      fontFamily="Poppins"
+                      fontWeight="medium"
+                      color="gray.600"
+                      fontSize="md"
+                      px={6}
+                      py={3}
+                      _selected={{
+                        color: "primary.600",
+                        borderColor: "primary.500",
+                        borderBottomWidth: "3px",
+                        fontWeight: "semibold"
+                      }}
+                      _hover={{
+                        color: "primary.500",
+                        bg: "primary.50"
+                      }}
+                      _focus={{
+                        boxShadow: "0 0 0 3px rgba(59, 130, 246, 0.1)"
+                      }}
+                      transition="all 0.2s ease"
+                    >
+                      <Icon as={tab.icon} mr={2} boxSize={5} />
+                      {tab.label}
+                    </Tab>
+                  ))}
+                </TabList>
+              </Tabs>
+            )}
 
-                    {/* Technologies */}
-                    {service.technologies && service.technologies.length > 0 && (
-                      <Box mt={4}>
-                        <HStack spacing={4} mb={6}>
-                          <Icon as={FaCode} color="primary.500" boxSize={7} />
-                          <VStack align="flex-start" spacing={1}>
-                            <Heading as="h3" size="md" color="primary.600" fontFamily="Poppins">
-                              Technologies utilisées
-                            </Heading>
-                            <Text color="gray.600" fontFamily="Lato" fontSize="sm">
-                              Outils et frameworks que nous maîtrisons
-                            </Text>
-                          </VStack>
-                        </HStack>
-                        <Flex wrap="wrap" gap={3}>
-                          {service.technologies.map((tech, index) => (
-                            <Badge
-                              key={index}
-                              bg="primary.100"
-                              color="primary.700"
-                              px={4}
-                              py={2}
-                              borderRadius="full"
-                              fontFamily="Poppins"
-                              fontSize="sm"
-                              fontWeight="medium"
-                              border="1px solid"
-                              borderColor="primary.200"
-                              _hover={{
-                                bg: "primary.200",
-                                transform: "translateY(-1px)"
-                              }}
-                              transition="all 0.2s ease"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
-                        </Flex>
-                      </Box>
-                    )}
-                  </VStack>
-                </TabPanel>
+            {/* Contenu des onglets */}
+            <Box p={{ base: 4, md: 8 }} bg="gray.50">
+              {/* Onglet Fonctionnalités */}
+              {activeTab === 0 && (
+                <VStack spacing={8} align="stretch">
+                  <HStack spacing={4}>
+                    <Icon as={FaCheckCircle} color="primary.500" boxSize={8} />
+                    <VStack align="flex-start" spacing={1}>
+                      <Heading as="h2" size="lg" color="primary.600" fontFamily="Poppins">
+                        Fonctionnalités incluses
+                      </Heading>
+                      <Text color="gray.600" fontFamily="Lato" fontSize="md">
+                        Découvrez tout ce qui est inclus dans ce service
+                      </Text>
+                    </VStack>
+                  </HStack>
 
-                {/* Onglet Cas d'usage */}
-                <TabPanel p={8} bg="gray.50">
-                  <VStack spacing={8} align="stretch">
-                    <HStack spacing={4}>
-                      <Icon as={FaBullseye} color="primary.500" boxSize={8} />
-                      <VStack align="flex-start" spacing={1}>
-                        <Heading as="h2" size="lg" color="primary.600" fontFamily="Poppins">
-                          Cas d'usage typiques
-                        </Heading>
-                        <Text color="gray.600" fontFamily="Lato" fontSize="md">
-                          Découvrez comment ce service peut s'adapter à vos besoins spécifiques
-                        </Text>
-                      </VStack>
-                    </HStack>
-
-                    {service.useCases && service.useCases.length > 0 ? (
-                      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
-                        {service.useCases.map((useCase, index) => (
-                        <Box
-                          key={index}
-                          p={6}
-                          bg="white"
-                          borderRadius="xl"
-                          border="1px solid"
-                          borderColor="gray.200"
-                          boxShadow="sm"
-                          _hover={{
-                            boxShadow: "md",
-                            transform: "translateY(-2px)",
-                            borderColor: "primary.200"
-                          }}
-                          transition="all 0.2s ease"
-                        >
-                          <HStack spacing={4} align="flex-start">
-                            <Icon
-                              as={FaLightbulb}
-                              color="primary.500"
-                              boxSize={6}
-                              mt={1}
-                              flexShrink={0}
-                            />
-                            <Text
-                              fontFamily="Lato"
-                              fontWeight="medium"
-                              color="gray.700"
-                              fontSize="md"
-                              lineHeight="1.6"
-                            >
-                              {useCase}
-                            </Text>
-                          </HStack>
-                        </Box>
-                        ))}
-                      </SimpleGrid>
-                    ) : (
+                  <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+                    {service.features.map((feature, index) => (
                       <Box
-                        p={8}
+                        key={index}
+                        p={6}
                         bg="white"
                         borderRadius="xl"
-                        textAlign="center"
+                        boxShadow="sm"
                         border="1px solid"
                         borderColor="gray.200"
+                        _hover={{
+                          boxShadow: "md",
+                          transform: "translateY(-2px)",
+                          borderColor: "primary.200"
+                        }}
+                        transition="all 0.2s ease"
                       >
-                        <Text color="gray.500" fontStyle="italic" fontSize="lg">
-                          Cas d'usage en cours de rédaction...
-                        </Text>
+                        <HStack spacing={4} align="flex-start">
+                          <Icon
+                            as={FaCheckCircle}
+                            color="primary.500"
+                            boxSize={5}
+                            mt={1}
+                            flexShrink={0}
+                          />
+                          <Text
+                            fontFamily="Lato"
+                            fontWeight="medium"
+                            color="gray.700"
+                            fontSize="md"
+                            lineHeight="1.6"
+                          >
+                            {feature}
+                          </Text>
+                        </HStack>
                       </Box>
-                    )}
-                  </VStack>
-                </TabPanel>
+                    ))}
+                  </SimpleGrid>
 
-                {/* Onglet Avantages */}
-                <TabPanel p={8} bg="gray.50">
-                  <VStack spacing={8} align="stretch">
-                    <HStack spacing={4}>
-                      <Icon as={FaStar} color="primary.500" boxSize={8} />
-                      <VStack align="flex-start" spacing={1}>
-                        <Heading as="h2" size="lg" color="primary.600" fontFamily="Poppins">
-                          Avantages pour votre entreprise
-                        </Heading>
-                        <Text color="gray.600" fontFamily="Lato" fontSize="md">
-                          Les bénéfices concrets que vous obtiendrez avec ce service
-                        </Text>
-                      </VStack>
-                    </HStack>
-
-                    {service.benefits && service.benefits.length > 0 ? (
-                      <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={6}>
-                        {service.benefits.map((benefit, index) => (
-                        <GridItem key={index}>
-                          <Box
-                            p={6}
-                            bg="white"
-                            borderRadius="xl"
+                  {/* Technologies */}
+                  {service.technologies && service.technologies.length > 0 && (
+                    <Box mt={4}>
+                      <HStack spacing={4} mb={6}>
+                        <Icon as={FaCode} color="primary.500" boxSize={7} />
+                        <VStack align="flex-start" spacing={1}>
+                          <Heading as="h3" size="md" color="primary.600" fontFamily="Poppins">
+                            Technologies utilisées
+                          </Heading>
+                          <Text color="gray.600" fontFamily="Lato" fontSize="sm">
+                            Outils et frameworks que nous maîtrisons
+                          </Text>
+                        </VStack>
+                      </HStack>
+                      <Flex wrap="wrap" gap={3}>
+                        {service.technologies.map((tech, index) => (
+                          <Badge
+                            key={index}
+                            bg="primary.100"
+                            color="primary.700"
+                            px={4}
+                            py={2}
+                            borderRadius="full"
+                            fontFamily="Poppins"
+                            fontSize="sm"
+                            fontWeight="medium"
                             border="1px solid"
-                            borderColor="gray.200"
-                            h="100%"
-                            boxShadow="sm"
+                            borderColor="primary.200"
                             _hover={{
-                              boxShadow: "md",
-                              transform: "translateY(-2px)",
-                              borderColor: "primary.200"
+                              bg: "primary.200",
+                              transform: "translateY(-1px)"
                             }}
                             transition="all 0.2s ease"
                           >
-                            <HStack spacing={4} align="flex-start">
-                              <Icon
-                                as={FaStar}
-                                color="primary.500"
-                                boxSize={6}
-                                mt={1}
-                                flexShrink={0}
-                              />
-                              <Text
-                                fontFamily="Lato"
-                                fontWeight="medium"
-                                color="gray.700"
-                                fontSize="md"
-                                lineHeight="1.6"
-                              >
-                                {benefit}
-                              </Text>
-                            </HStack>
-                          </Box>
-                        </GridItem>
+                            {tech}
+                          </Badge>
                         ))}
-                      </Grid>
-                    ) : (
+                      </Flex>
+                    </Box>
+                  )}
+                </VStack>
+              )}
+
+              {/* Onglet Cas d'usage */}
+              {activeTab === 1 && (
+                <VStack spacing={8} align="stretch">
+                  <HStack spacing={4}>
+                    <Icon as={FaBullseye} color="primary.500" boxSize={{ base: 6, md: 8 }} />
+                    <VStack align="flex-start" spacing={1}>
+                      <Heading as="h2" size={{ base: "md", md: "lg" }} color="primary.600" fontFamily="Poppins">
+                        Cas d'usage typiques
+                      </Heading>
+                      <Text color="gray.600" fontFamily="Lato" fontSize={{ base: "sm", md: "md" }}>
+                        Découvrez comment ce service peut s'adapter à vos besoins spécifiques
+                      </Text>
+                    </VStack>
+                  </HStack>
+
+                  {service.useCases && service.useCases.length > 0 ? (
+                    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+                      {service.useCases.map((useCase, index) => (
                       <Box
-                        p={8}
+                        key={index}
+                        p={6}
                         bg="white"
                         borderRadius="xl"
-                        textAlign="center"
                         border="1px solid"
                         borderColor="gray.200"
+                        boxShadow="sm"
+                        _hover={{
+                          boxShadow: "md",
+                          transform: "translateY(-2px)",
+                          borderColor: "primary.200"
+                        }}
+                        transition="all 0.2s ease"
                       >
-                        <Text color="gray.500" fontStyle="italic" fontSize="lg">
-                          Avantages en cours de rédaction...
-                        </Text>
+                        <HStack spacing={4} align="flex-start">
+                          <Icon
+                            as={FaLightbulb}
+                            color="primary.500"
+                            boxSize={6}
+                            mt={1}
+                            flexShrink={0}
+                          />
+                          <Text
+                            fontFamily="Lato"
+                            fontWeight="medium"
+                            color="gray.700"
+                            fontSize="md"
+                            lineHeight="1.6"
+                          >
+                            {useCase}
+                          </Text>
+                        </HStack>
                       </Box>
-                    )}
-                  </VStack>
-                </TabPanel>
+                      ))}
+                    </SimpleGrid>
+                  ) : (
+                    <Box
+                      p={8}
+                      bg="white"
+                      borderRadius="xl"
+                      textAlign="center"
+                      border="1px solid"
+                      borderColor="gray.200"
+                    >
+                      <Text color="gray.500" fontStyle="italic" fontSize="lg">
+                        Cas d'usage en cours de rédaction...
+                      </Text>
+                    </Box>
+                  )}
+                </VStack>
+              )}
 
-                {/* Onglet Processus */}
-                <TabPanel p={8} bg="gray.50">
-                  <VStack spacing={8} align="stretch">
-                    <HStack spacing={4}>
-                      <Icon as={FaCogs} color="primary.500" boxSize={8} />
-                      <VStack align="flex-start" spacing={1}>
-                        <Heading as="h2" size="lg" color="primary.600" fontFamily="Poppins">
-                          Notre processus de travail
-                        </Heading>
-                        <Text color="gray.600" fontFamily="Lato" fontSize="md">
-                          Découvrez comment nous procédons étape par étape
-                        </Text>
-                      </VStack>
-                    </HStack>
+              {/* Onglet Avantages */}
+              {activeTab === 2 && (
+                <VStack spacing={8} align="stretch">
+                  <HStack spacing={4}>
+                    <Icon as={FaStar} color="primary.500" boxSize={{ base: 6, md: 8 }} />
+                    <VStack align="flex-start" spacing={1}>
+                      <Heading as="h2" size={{ base: "md", md: "lg" }} color="primary.600" fontFamily="Poppins">
+                        Avantages pour votre entreprise
+                      </Heading>
+                      <Text color="gray.600" fontFamily="Lato" fontSize={{ base: "sm", md: "md" }}>
+                        Les bénéfices concrets que vous obtiendrez avec ce service
+                      </Text>
+                    </VStack>
+                  </HStack>
 
-                    {service.process && service.process.length > 0 ? (
-                      <VStack spacing={6} align="stretch">
-                        {service.process.map((step, index) => (
+                  {service.benefits && service.benefits.length > 0 ? (
+                    <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={6}>
+                      {service.benefits.map((benefit, index) => (
+                      <GridItem key={index}>
                         <Box
-                          key={index}
                           p={6}
                           bg="white"
                           borderRadius="xl"
                           border="1px solid"
                           borderColor="gray.200"
-                          boxShadow="sm"
-                          _hover={{
-                            boxShadow: "md",
-                            transform: "translateY(-2px)",
-                            borderColor: "primary.200"
-                          }}
-                          transition="all 0.2s ease"
-                        >
-                          <HStack spacing={6} align="flex-start">
-                            <Box
-                              minW="50px"
-                              h="50px"
-                              bg="primary.500"
-                              color="white"
-                              borderRadius="full"
-                              display="flex"
-                              alignItems="center"
-                              justifyContent="center"
-                              fontWeight="bold"
-                              fontFamily="Poppins"
-                              fontSize="lg"
-                              flexShrink={0}
-                              boxShadow="0 4px 12px rgba(59, 130, 246, 0.3)"
-                            >
-                              {index + 1}
-                            </Box>
-                            <VStack align="flex-start" spacing={2} flex="1">
-                              <Text
-                                fontFamily="Lato"
-                                fontWeight="medium"
-                                color="gray.700"
-                                fontSize="md"
-                                lineHeight="1.6"
-                              >
-                                {step}
-                              </Text>
-                            </VStack>
-                          </HStack>
-                        </Box>
-                        ))}
-                      </VStack>
-                    ) : (
-                      <Box
-                        p={8}
-                        bg="white"
-                        borderRadius="xl"
-                        textAlign="center"
-                        border="1px solid"
-                        borderColor="gray.200"
-                      >
-                        <Text color="gray.500" fontStyle="italic" fontSize="lg">
-                          Processus en cours de rédaction...
-                        </Text>
-                      </Box>
-                    )}
-                  </VStack>
-                </TabPanel>
-
-                {/* Onglet Livrables */}
-                <TabPanel p={8} bg="gray.50">
-                  <VStack spacing={8} align="stretch">
-                    <HStack spacing={4}>
-                      <Icon as={FaGift} color="primary.500" boxSize={8} />
-                      <VStack align="flex-start" spacing={1}>
-                        <Heading as="h2" size="lg" color="primary.600" fontFamily="Poppins">
-                          Ce que vous recevrez
-                        </Heading>
-                        <Text color="gray.600" fontFamily="Lato" fontSize="md">
-                          Tous les éléments livrés à la fin du projet
-                        </Text>
-                      </VStack>
-                    </HStack>
-
-                    {service.deliverables && service.deliverables.length > 0 ? (
-                      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
-                        {service.deliverables.map((deliverable, index) => (
-                        <Box
-                          key={index}
-                          p={6}
-                          bg="white"
-                          borderRadius="xl"
-                          border="1px solid"
-                          borderColor="gray.200"
+                          h="100%"
                           boxShadow="sm"
                           _hover={{
                             boxShadow: "md",
@@ -663,7 +460,7 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
                         >
                           <HStack spacing={4} align="flex-start">
                             <Icon
-                              as={FaGift}
+                              as={FaStar}
                               color="primary.500"
                               boxSize={6}
                               mt={1}
@@ -676,30 +473,184 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
                               fontSize="md"
                               lineHeight="1.6"
                             >
-                              {deliverable}
+                              {benefit}
                             </Text>
                           </HStack>
                         </Box>
-                        ))}
-                      </SimpleGrid>
-                    ) : (
+                      </GridItem>
+                      ))}
+                    </Grid>
+                  ) : (
+                    <Box
+                      p={8}
+                      bg="white"
+                      borderRadius="xl"
+                      textAlign="center"
+                      border="1px solid"
+                      borderColor="gray.200"
+                    >
+                      <Text color="gray.500" fontStyle="italic" fontSize="lg">
+                        Avantages en cours de rédaction...
+                      </Text>
+                    </Box>
+                  )}
+                </VStack>
+              )}
+
+              {/* Onglet Processus */}
+              {activeTab === 3 && (
+                <VStack spacing={8} align="stretch">
+                  <HStack spacing={4}>
+                    <Icon as={FaCogs} color="primary.500" boxSize={{ base: 6, md: 8 }} />
+                    <VStack align="flex-start" spacing={1}>
+                      <Heading as="h2" size={{ base: "md", md: "lg" }} color="primary.600" fontFamily="Poppins">
+                        Notre processus de travail
+                      </Heading>
+                      <Text color="gray.600" fontFamily="Lato" fontSize={{ base: "sm", md: "md" }}>
+                        Découvrez comment nous procédons étape par étape
+                      </Text>
+                    </VStack>
+                  </HStack>
+
+                  {service.process && service.process.length > 0 ? (
+                    <VStack spacing={6} align="stretch">
+                      {service.process.map((step, index) => (
                       <Box
-                        p={8}
+                        key={index}
+                        p={6}
                         bg="white"
                         borderRadius="xl"
-                        textAlign="center"
                         border="1px solid"
                         borderColor="gray.200"
+                        boxShadow="sm"
+                        _hover={{
+                          boxShadow: "md",
+                          transform: "translateY(-2px)",
+                          borderColor: "primary.200"
+                        }}
+                        transition="all 0.2s ease"
                       >
-                        <Text color="gray.500" fontStyle="italic" fontSize="lg">
-                          Livrables en cours de rédaction...
-                        </Text>
+                        <HStack spacing={6} align="flex-start">
+                          <Box
+                            minW="50px"
+                            h="50px"
+                            bg="primary.500"
+                            color="white"
+                            borderRadius="full"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            fontWeight="bold"
+                            fontFamily="Poppins"
+                            fontSize="lg"
+                            flexShrink={0}
+                            boxShadow="0 4px 12px rgba(59, 130, 246, 0.3)"
+                          >
+                            {index + 1}
+                          </Box>
+                          <VStack align="flex-start" spacing={2} flex="1">
+                            <Text
+                              fontFamily="Lato"
+                              fontWeight="medium"
+                              color="gray.700"
+                              fontSize="md"
+                              lineHeight="1.6"
+                            >
+                              {step}
+                            </Text>
+                          </VStack>
+                        </HStack>
                       </Box>
-                    )}
-                  </VStack>
-                </TabPanel>
-              </TabPanels>
-            </Tabs>
+                      ))}
+                    </VStack>
+                  ) : (
+                    <Box
+                      p={8}
+                      bg="white"
+                      borderRadius="xl"
+                      textAlign="center"
+                      border="1px solid"
+                      borderColor="gray.200"
+                    >
+                      <Text color="gray.500" fontStyle="italic" fontSize="lg">
+                        Processus en cours de rédaction...
+                      </Text>
+                    </Box>
+                  )}
+                </VStack>
+              )}
+
+              {/* Onglet Livrables */}
+              {activeTab === 4 && (
+                <VStack spacing={8} align="stretch">
+                  <HStack spacing={4}>
+                    <Icon as={FaGift} color="primary.500" boxSize={{ base: 6, md: 8 }} />
+                    <VStack align="flex-start" spacing={1}>
+                      <Heading as="h2" size={{ base: "md", md: "lg" }} color="primary.600" fontFamily="Poppins">
+                        Ce que vous recevrez
+                      </Heading>
+                      <Text color="gray.600" fontFamily="Lato" fontSize={{ base: "sm", md: "md" }}>
+                        Tous les éléments livrés à la fin du projet
+                      </Text>
+                    </VStack>
+                  </HStack>
+
+                  {service.deliverables && service.deliverables.length > 0 ? (
+                    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+                      {service.deliverables.map((deliverable, index) => (
+                      <Box
+                        key={index}
+                        p={6}
+                        bg="white"
+                        borderRadius="xl"
+                        border="1px solid"
+                        borderColor="gray.200"
+                        boxShadow="sm"
+                        _hover={{
+                          boxShadow: "md",
+                          transform: "translateY(-2px)",
+                          borderColor: "primary.200"
+                        }}
+                        transition="all 0.2s ease"
+                      >
+                        <HStack spacing={4} align="flex-start">
+                          <Icon
+                            as={FaGift}
+                            color="primary.500"
+                            boxSize={6}
+                            mt={1}
+                            flexShrink={0}
+                          />
+                          <Text
+                            fontFamily="Lato"
+                            fontWeight="medium"
+                            color="gray.700"
+                            fontSize="md"
+                            lineHeight="1.6"
+                          >
+                            {deliverable}
+                          </Text>
+                        </HStack>
+                      </Box>
+                      ))}
+                    </SimpleGrid>
+                  ) : (
+                    <Box
+                      p={8}
+                      bg="white"
+                      borderRadius="xl"
+                      textAlign="center"
+                      border="1px solid"
+                      borderColor="gray.200"
+                    >
+                      <Text color="gray.500" fontStyle="italic" fontSize="lg">
+                        Livrables en cours de rédaction...
+                      </Text>
+                    </Box>
+                  )}
+                </VStack>
+              )}
+            </Box>
           </Box>
 
           {/* Section tarification et CTA */}
