@@ -7,6 +7,7 @@ export interface BlogPost {
     name: string;
     avatar: string;
     role: string;
+    bio: string;
   };
   publishedAt: string;
   readTime: number;
@@ -48,7 +49,8 @@ export const blogPosts: BlogPost[] = [
     author: {
       name: 'Équipe Benilab',
       avatar: '/images/team/team-avatar.jpg',
-      role: 'Experts en transformation digitale'
+      role: 'Experts en transformation digitale',
+      bio: "L'équipe Benilab accompagne les entreprises béninoises dans leur transformation digitale avec expertise et passion."
     },
     publishedAt: '2025-01-15',
     readTime: 8,
@@ -79,7 +81,8 @@ export const blogPosts: BlogPost[] = [
     author: {
       name: 'Équipe Design',
       avatar: '/images/team/design-team.jpg',
-      role: 'Designers UI/UX'
+      role: 'Designers UI/UX',
+      bio: "L'équipe Design de Benilab est spécialisée dans la création d'expériences utilisateur innovantes et modernes."
     },
     publishedAt: '2025-01-10',
     readTime: 6,
@@ -112,7 +115,8 @@ export const blogPosts: BlogPost[] = [
     author: {
       name: 'Expert SEO',
       avatar: '/images/team/seo-expert.jpg',
-      role: 'Spécialiste SEO'
+      role: 'Spécialiste SEO',
+      bio: "Expert SEO passionné par l'optimisation de la visibilité des entreprises africaines sur le web."
     },
     publishedAt: '2025-01-05',
     readTime: 10,
@@ -145,7 +149,8 @@ export const blogPosts: BlogPost[] = [
     author: {
       name: 'Analyste E-commerce',
       avatar: '/images/team/ecommerce-analyst.jpg',
-      role: 'Expert E-commerce'
+      role: 'Expert E-commerce',
+      bio: "Analyste spécialisé dans le e-commerce africain et les tendances du marché digital."
     },
     publishedAt: '2024-12-28',
     readTime: 7,

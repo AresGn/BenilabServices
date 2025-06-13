@@ -5,7 +5,7 @@ export interface Service {
   longDescription: string;
   icon: string;
   features: string[];
-  technologies?: string[];
+  technologies: string[];
   pricing?: {
     starting: string;
     currency: string;

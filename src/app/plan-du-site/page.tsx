@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Box,
   Container,
@@ -9,28 +11,63 @@ import {
   Icon,
   HStack,
 } from '@chakra-ui/react';
-import { 
-  FaHome, 
-  FaInfoCircle, 
-  FaCogs, 
-  FaProjectDiagram, 
-  FaBlog, 
+import {
+  FaHome,
+  FaInfoCircle,
+  FaCogs,
+  FaProjectDiagram,
+  FaBlog,
   FaEnvelope,
   FaFileAlt,
   FaShieldAlt,
   FaGavel,
   FaSitemap
 } from 'react-icons/fa';
+import type { IconType } from 'react-icons';
 import NextLink from 'next/link';
+
+// Définir les clés valides pour les icônes
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const iconNames = [
+  'FaHome',
+  'FaInfoCircle',
+  'FaCogs',
+  'FaProjectDiagram',
+  'FaBlog',
+  'FaEnvelope',
+  'FaFileAlt',
+  'FaShieldAlt',
+  'FaGavel',
+  'FaSitemap',
+] as const;
+type IconName = typeof iconNames[number];
+
+const iconMap: Record<IconName, IconType> = {
+  FaHome,
+  FaInfoCircle,
+  FaCogs,
+  FaProjectDiagram,
+  FaBlog,
+  FaEnvelope,
+  FaFileAlt,
+  FaShieldAlt,
+  FaGavel,
+  FaSitemap
+};
 
 export default function PlanDuSitePage() {
   const bgColor = 'gray.50';
   const cardBg = 'white';
 
-  const siteStructure = [
+  const siteStructure: Array<{
+    title: string;
+    icon: IconName;
+    color: string;
+    links: Array<{ name: string; url: string; description: string }>;
+  }> = [
     {
       title: 'Pages principales',
-      icon: FaHome,
+      icon: 'FaHome',
       color: 'primary.500',
       links: [
         { name: 'Accueil', url: '/', description: 'Page d\'accueil avec présentation de nos services' },
@@ -43,7 +80,7 @@ export default function PlanDuSitePage() {
     },
     {
       title: 'Services détaillés',
-      icon: FaCogs,
+      icon: 'FaCogs',
       color: 'secondary.500',
       links: [
         { name: 'Développement Web', url: '/services/web-development', description: 'Sites web et applications' },
@@ -55,7 +92,7 @@ export default function PlanDuSitePage() {
     },
     {
       title: 'Projets',
-      icon: FaProjectDiagram,
+      icon: 'FaProjectDiagram',
       color: 'primary.500',
       links: [
         { name: 'AgriBoost', url: '/projets/agriboost', description: 'Plateforme agricole intelligente' },
@@ -66,7 +103,7 @@ export default function PlanDuSitePage() {
     },
     {
       title: 'Blog & Actualités',
-      icon: FaBlog,
+      icon: 'FaBlog',
       color: 'secondary.500',
       links: [
         { name: 'Tous les articles', url: '/blog', description: 'Derniers articles et actualités' },
@@ -78,7 +115,7 @@ export default function PlanDuSitePage() {
     },
     {
       title: 'Pages légales',
-      icon: FaGavel,
+      icon: 'FaGavel',
       color: 'gray.500',
       links: [
         { name: 'Mentions légales', url: '/mentions-legales', description: 'Informations légales de l\'entreprise' },
@@ -95,7 +132,7 @@ export default function PlanDuSitePage() {
         <VStack spacing={12} align="stretch">
           {/* En-tête */}
           <VStack spacing={6} textAlign="center">
-            <Icon as={FaSitemap} boxSize={16} color="primary.500" />
+            <Icon as={iconMap['FaSitemap']} boxSize={16} color="primary.500" />
             <Heading
               as="h1"
               size="2xl"
@@ -111,7 +148,7 @@ export default function PlanDuSitePage() {
               fontFamily="Lato"
               lineHeight="1.6"
             >
-              Découvrez l'architecture complète de notre site web. 
+              Découvrez l&apos;architecture complète de notre site web. 
               Trouvez facilement toutes les pages et sections disponibles.
             </Text>
           </VStack>
@@ -132,7 +169,7 @@ export default function PlanDuSitePage() {
                   {/* En-tête de section */}
                   <HStack spacing={4}>
                     <Icon
-                      as={section.icon}
+                      as={iconMap[section.icon]}
                       boxSize={8}
                       color={section.color}
                     />
@@ -328,10 +365,3 @@ export default function PlanDuSitePage() {
     </Box>
   );
 }
-
-// Métadonnées pour le SEO
-export const metadata = {
-  title: 'Plan du Site - Benilab Services',
-  description: 'Plan du site de Benilab Services. Découvrez toutes les pages et sections disponibles sur notre site web.',
-  keywords: 'plan du site, sitemap, navigation, Benilab Services, pages, structure',
-};
